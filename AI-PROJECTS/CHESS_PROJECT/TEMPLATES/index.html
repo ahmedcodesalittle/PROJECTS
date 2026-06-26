@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="index-page">
+
+  <header class="index-header">
+    <div class="chess-icon">&#9818;</div>
+    <h1 class="index-title">Chess AI</h1>
+    <p class="index-subtitle">Challenge yourself against four AI difficulty levels</p>
+  </header>
+
+  <main class="difficulty-grid">
+
+    <div class="card card-beginner">
+      <div class="card-num">01</div>
+      <div class="card-glyph">&#9823;</div>
+      <h2 class="card-name">Beginner</h2>
+      <div class="card-badge badge-beginner">Random Selection</div>
+      <p class="card-desc">Picks moves at random. Great for beginners learning the rules.</p>
+      <a class="card-btn btn-beginner" href="/choose/beginner">Play</a>
+    </div>
+
+    <div class="card card-intermediate">
+      <div class="card-num">02</div>
+      <div class="card-glyph">&#9822;</div>
+      <h2 class="card-name">Intermediate</h2>
+      <div class="card-badge badge-intermediate">Minimax &mdash; Depth 3</div>
+      <p class="card-desc">Looks 3 moves ahead. Will punish blunders but can be outplayed.</p>
+      <a class="card-btn btn-intermediate" href="/choose/intermediate">Play</a>
+    </div>
+
+    <div class="card card-pro">
+      <div class="card-num">03</div>
+      <div class="card-glyph">&#9820;</div>
+      <h2 class="card-name">Pro</h2>
+      <div class="card-badge badge-pro">Alpha-Beta &mdash; Depth 5</div>
+      <p class="card-desc">Searches 5 moves deep with pruning. Plays solid tactical chess.</p>
+      <a class="card-btn btn-pro" href="/choose/pro">Play</a>
+    </div>
+
+    <div class="card card-master">
+      <div class="card-num">04</div>
+      <div class="card-glyph">&#9819;</div>
+      <h2 class="card-name">Master</h2>
+      <div class="card-badge badge-master">Alpha-Beta + Optimisations</div>
+      <p class="card-desc">Move ordering, transposition table and quiescence search. Relentless.</p>
+      <a class="card-btn btn-master" href="/choose/master">Play</a>
+    </div>
+
+  </main>
+
+  <footer class="index-footer">Python &bull; Flask &bull; python-chess</footer>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess AI — Choose Your Side</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="choose-page">
+
+  <div class="choose-wrap">
+
+    <a class="back-link" href="/">&#8592; Back to levels</a>
+
+    <div class="choose-header">
+      <div class="choose-level-badge badge-{{ level }}">{{ level | capitalize }} &mdash; {{ algo }}</div>
+      <h1 class="choose-title">Choose Your Side</h1>
+      <p class="choose-sub">Pick a colour to begin. You will always move first as White, or respond as Black.</p>
+    </div>
+
+    <div class="colour-grid">
+
+      <a class="colour-card colour-white" href="/begin/{{ level }}/white">
+        <div class="colour-pieces">
+          <span>&#9812;</span><span>&#9813;</span><span>&#9814;</span>
+        </div>
+        <div class="colour-name">White</div>
+        <div class="colour-desc">You move first. Take the initiative and control the centre.</div>
+        <div class="colour-btn">Play as White</div>
+      </a>
+
+      <a class="colour-card colour-black" href="/begin/{{ level }}/black">
+        <div class="colour-pieces">
+          <span>&#9818;</span><span>&#9819;</span><span>&#9820;</span>
+        </div>
+        <div class="colour-name">Black</div>
+        <div class="colour-desc">You move second. React, counter-attack and surprise your opponent.</div>
+        <div class="colour-btn">Play as Black</div>
+      </a>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
