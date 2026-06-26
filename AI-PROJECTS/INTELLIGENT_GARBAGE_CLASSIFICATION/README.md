@@ -85,12 +85,3 @@ Flask automatically, so there's nothing else to configure.
 The model's preprocessing (MobileNetV2 scaling) is baked into the saved graph,
 so the backend only resizes to 224×224 — it never has to re-implement the
 preprocessing, which is a common source of train/serve mismatch bugs.
-
-## Tweaks you might want
-- **Disposal guidance**: edit the `GUIDANCE` dict in `backend/app.py` to match
-  your local council's bin names.
-- **Different backbone**: swap `MobileNetV2` for `EfficientNetB0` in the
-  training script for a small accuracy bump at the cost of speed.
-- **Deploy**: build the frontend (`npm run build`) and serve the static files
-  from Flask, or host the API on Render/Railway and the frontend on Vercel.
-```
