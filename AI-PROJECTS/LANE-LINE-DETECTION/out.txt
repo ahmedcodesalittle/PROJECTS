@@ -1,0 +1,101 @@
+(base) PS C:\Users\Fantasy solution\SanYoloPy> %cd yolov5
+%cd : The term '%cd' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try
+again.
+At line:1 char:1
++ %cd yolov5
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (%cd:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+(base) PS C:\Users\Fantasy solution\SanYoloPy> !python train.py --img 640 --batch 3 --epochs 2 --data "fire_data.yaml" --weights 'yolov5s.pt'
+and try again.
+At line:1 char:1
++ !python train.py --img 640 --batch 3 --epochs 2 --data "fire_data.yam ...
++ ~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (!python:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+(base) PS C:\Users\Fantasy solution\SanYoloPy> python train.py --img 640 --batch 3 --epochs 2 --data "fire_data.yaml" --weights 'yolov5s.pt'
+C:\ProgramData\anaconda3\python.exe: can't open file 'C:\\Users\\Fantasy solution\\SanYoloPy\\train.py': [Errno 2] No such file or directory
+(base) PS C:\Users\Fantasy solution\SanYoloPy> python yolov5\\train.py --img 640 --batch 3 --epochs 2 --data "yolov5\\fire_data.yaml" --weights 'yolov5s.pt'
+train: weights=yolov5s.pt, cfg=, data=yolov5\\fire_data.yaml, hyp=yolov5\data\hyps\hyp.scratch-low.yaml, epochs=2, batch_size=3, imgsz=640, rect=False, resume=False, nosave=False, noval=False, noautoanchor=False
+, noplots=False, evolve=None, evolve_population=yolov5\data\hyps, resume_evolve=None, bucket=, cache=None, image_weights=False, device=, multi_scale=False, single_cls=False, optimizer=SGD, sync_bn=False, workers
+=8, project=yolov5\runs\train, name=exp, exist_ok=False, quad=False, cos_lr=False, label_smoothing=0.0, patience=100, freeze=[0], save_period=-1, seed=0, local_rank=-1, entity=None, upload_dataset=False, bbox_in
+terval=-1, artifact_alias=latest, ndjson_console=False, ndjson_file=False
+github: up to date with https://github.com/ultralytics/yolov5
+fatal: cannot change to 'C:\Users\Fantasy': No such file or directory
+YOLOv5  2024-1-4 Python-3.11.5 torch-2.1.0+cpu CPU
+
+hyperparameters: lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=0.05, cls=0.5, cls_pw=1.0, obj=1.0, obj_pw=1.0, iou_t=0.2, anchor_t=4.0,
+fl_gamma=0.0, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, mosaic=1.0, mixup=0.0, copy_paste=0.0
+Comet: run 'pip install comet_ml' to automatically track and visualize YOLOv5  runs in Comet
+TensorBoard: Start with 'tensorboard --logdir yolov5\runs\train', view at http://localhost:6006/
+Overriding model.yaml nc=80 with nc=1
+
+                 from  n    params  module                                  arguments
+  0                -1  1      3520  models.common.Conv                      [3, 32, 6, 2, 2]
+  1                -1  1     18560  models.common.Conv                      [32, 64, 3, 2]
+  2                -1  1     18816  models.common.C3                        [64, 64, 1]
+  3                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]
+  4                -1  2    115712  models.common.C3                        [128, 128, 2]
+  5                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]
+  6                -1  3    625152  models.common.C3                        [256, 256, 3]
+  7                -1  1   1180672  models.common.Conv                      [256, 512, 3, 2]
+  8                -1  1   1182720  models.common.C3                        [512, 512, 1]
+  9                -1  1    656896  models.common.SPPF                      [512, 512, 5]
+ 10                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]
+ 13                -1  1    361984  models.common.C3                        [512, 256, 1, False]
+ 14                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]
+ 17                -1  1     90880  models.common.C3                        [256, 128, 1, False]
+ 18                -1  1    147712  models.common.Conv                      [128, 128, 3, 2]
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]
+ 20                -1  1    296448  models.common.C3                        [256, 256, 1, False]
+ 21                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]
+ 23                -1  1   1182720  models.common.C3                        [512, 512, 1, False]
+ 24      [17, 20, 23]  1     16182  models.yolo.Detect                      [1, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [128, 256, 512]]
+Model summary: 214 layers, 7022326 parameters, 7022326 gradients, 15.9 GFLOPs
+
+Transferred 343/349 items from yolov5s.pt
+optimizer: SGD(lr=0.01) with parameter groups 57 weight(decay=0.0), 60 weight(decay=0.0004921875), 60 bias
+train: Scanning C:\Users\Fantasy solution\SanYoloPy\yolov5\ffdata\Fire_data\labels\train... 300 images, 0 backgrounds, 0 corrupt: 100%|██████████| 300/300 [00:15<00:00, 19.87it/s]
+train: WARNING  C:\Users\Fantasy solution\SanYoloPy\yolov5\ffdata\Fire_data\images\train\fire.357.png: corrupt JPEG restored and saved
+train: New cache created: C:\Users\Fantasy solution\SanYoloPy\yolov5\ffdata\Fire_data\labels\train.cache
+val: Scanning C:\Users\Fantasy solution\SanYoloPy\yolov5\ffdata\Fire_data\labels\test... 52 images, 0 backgrounds, 0 corrupt: 100%|██████████| 52/52 [00:10<00:00,  4.78it/s]
+val: New cache created: C:\Users\Fantasy solution\SanYoloPy\yolov5\ffdata\Fire_data\labels\test.cache
+
+AutoAnchor: 5.09 anchors/target, 0.999 Best Possible Recall (BPR). Current anchors are a good fit to dataset
+Plotting labels to yolov5\runs\train\exp3\labels.jpg...
+Image sizes 640 train, 640 val
+Using 3 dataloader workers
+Logging results to yolov5\runs\train\exp3
+Starting training for 2 epochs...
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+        0/1         0G     0.1177    0.05385          0         22        640: 100%|██████████| 100/100 [03:00<00:00,  1.81s/it]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  78%|███████▊  | 7/9 [00:10<00:03,  1.58s/it]WARNING  NMS time limit 0.800s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  89%|████████▉ | 8/9 [00:12<00:01,  1.67s/it]WARNING  NMS time limit 0.700s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 9/9 [00:13<00:00,  1.53s/it]
+                   all         52        314    0.00346      0.169    0.00263   0.000548
+
+      Epoch    GPU_mem   box_loss   obj_loss   cls_loss  Instances       Size
+        1/1         0G     0.1071    0.06044          0         37        640: 100%|██████████| 100/100 [02:46<00:00,  1.66s/it]
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  89%|████████▉ | 8/9 [00:09<00:01,  1.32s/it]WARNING  NMS time limit 0.700s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 9/9 [00:11<00:00,  1.25s/it]
+                   all         52        314      0.005      0.248    0.00688     0.0019
+
+2 epochs completed in 0.104 hours.
+Optimizer stripped from yolov5\runs\train\exp3\weights\last.pt, 14.4MB
+Optimizer stripped from yolov5\runs\train\exp3\weights\best.pt, 14.4MB
+
+Validating yolov5\runs\train\exp3\weights\best.pt...
+Fusing layers...
+Model summary: 157 layers, 7012822 parameters, 0 gradients, 15.8 GFLOPs
+                 Class     Images  Instances          P          R      mAP50   mAP50-95:  89%|████████▉ | 8/9 [00:09<00:01,  1.26s/it]WARNING  NMS time limit 0.700s exceeded
+                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100%|██████████| 9/9 [00:10<00:00,  1.22s/it]
+                   all         52        314    0.00506      0.252    0.00782    0.00215
+Results saved to yolov5\runs\train\exp3
+(base) PS C:\Users\Fantasy solution\SanYoloPy> model = torch.hub.load('ultralytics/yolov5', 'custom', path='runs/train/exp/weights/best.pt', force_reload=True)
